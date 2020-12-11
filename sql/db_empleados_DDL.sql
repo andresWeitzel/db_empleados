@@ -40,8 +40,8 @@ id							int 									auto_increment 	primary key,
 id_empleados				int										not null,
 constraint					fk_id_empleados_desarrolladores			foreign key(id_empleados) references empleados(id),
 puesto						varchar(30)								not null,
-certificaciones				varchar(40),
-habilidades					varchar(40)								not null,
+certificaciones				varchar(80),
+habilidades					varchar(60)								not null,
 proyectos_en_produccion		int 									
 
 );
@@ -52,8 +52,8 @@ id					int 									auto_increment 	primary key,
 id_empleados		int										not null,
 constraint			fk_id_empleados_soporte_tecnico			foreign key(id_empleados) references empleados(id),
 puesto				varchar(30)								not null,
-formacion			varchar(40),-- titulo universitario, etc
-certificaciones		varchar(40)
+formacion			varchar(50),-- titulo universitario, etc
+certificaciones		varchar(80)
 
 );
 
@@ -64,7 +64,7 @@ id					int 									auto_increment 	primary key,
 id_empleados		int										not null,
 constraint			fk_id_empleados_administracion			foreign key(id_empleados) references empleados(id),
 puesto				varchar(30)								not null,
-habilidades			varchar(40)								not null
+habilidades			varchar(50)								not null
 
 );
 
@@ -74,7 +74,7 @@ id					int 									auto_increment 			primary key,
 id_empleados		int										not null,
 constraint			fk_id_empleados_gerentes				foreign key(id_empleados) references empleados(id),
 sector				varchar(30)								not null,
-formacion			varchar(40), -- titulo, etc
+formacion			varchar(60), -- titulo, etc
 antiguedad			int										not  null
 
 );
