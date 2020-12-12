@@ -37,7 +37,7 @@ sueldo				float			not null
 create table desarrolladores(
 
 id							int 									auto_increment 	primary key,
-id_empleados				int										not null,
+id_empleados				int										not null unique,
 constraint					fk_id_empleados_desarrolladores			foreign key(id_empleados) references empleados(id),
 puesto						varchar(30)								not null,
 certificaciones				varchar(80),
@@ -49,7 +49,7 @@ proyectos_en_produccion		int
 create table soporte_tecnico(
 
 id					int 									auto_increment 	primary key,
-id_empleados		int										not null,
+id_empleados		int										not null unique,
 constraint			fk_id_empleados_soporte_tecnico			foreign key(id_empleados) references empleados(id),
 puesto				varchar(30)								not null,
 formacion			varchar(50),-- titulo universitario, etc
@@ -61,7 +61,7 @@ certificaciones		varchar(80)
 create table administracion(
 
 id					int 									auto_increment 	primary key,
-id_empleados		int										not null,
+id_empleados		int										not null unique,
 constraint			fk_id_empleados_administracion			foreign key(id_empleados) references empleados(id),
 puesto				varchar(30)								not null,
 habilidades			varchar(50)								not null
@@ -71,7 +71,7 @@ habilidades			varchar(50)								not null
 create table gerentes(
 
 id					int 									auto_increment 			primary key,
-id_empleados		int										not null,
+id_empleados		int										not null unique,
 constraint			fk_id_empleados_gerentes				foreign key(id_empleados) references empleados(id),
 sector				varchar(30)								not null,
 formacion			varchar(60), -- titulo, etc
